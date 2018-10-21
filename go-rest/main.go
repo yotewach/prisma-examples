@@ -58,7 +58,6 @@ func main() {
 	}).Methods("POST")
 
 	router.HandleFunc("/draft", func(w http.ResponseWriter, r *http.Request) {
-		// TODO: How do we get request body?
 		title := "Draft"
 		email := "alice@prisma.io"
 
