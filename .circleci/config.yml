@@ -12,7 +12,7 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: sudo yarn global add prisma
+      - run: ../scripts/prisma-install
       - run: cd node/cli-app && yarn && prisma generate
       - run: cd node/graphql && yarn && prisma generate
       - run: cd node/graphql-auth && yarn && prisma generate
@@ -26,7 +26,7 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: sudo yarn global add prisma
+      - run: ../scripts/prisma-install
       # - run: cd typescript/circleci && yarn && yarn tsc
       - run: cd typescript/cli-app && yarn && prisma generate && yarn tsc
       - run: cd typescript/graphql && yarn && prisma generate && yarn generate && yarn tsc
@@ -39,7 +39,7 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: sudo yarn global add prisma
+      - run: ../scripts/prisma-install
       - run: cd flow/graphql && yarn && prisma generate && yarn generate && yarn flow check
       - run: cd flow/script && yarn && prisma generate && yarn flow check
 
